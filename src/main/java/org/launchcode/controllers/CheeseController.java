@@ -63,6 +63,7 @@ public class CheeseController {
         Category cat = categoryDao.findOne(categoryId);
         newCheese.setCategory(cat);
         cheeseDao.save(newCheese);
+
         return "redirect:";
     }
 
@@ -70,6 +71,7 @@ public class CheeseController {
     public String displayRemoveCheeseForm(Model model) {
         model.addAttribute("cheeses", cheeseDao.findAll());
         model.addAttribute("title", "Remove Cheese");
+
         return "cheese/remove";
     }
 
@@ -82,5 +84,4 @@ public class CheeseController {
 
         return "redirect:";
     }
-
 }
